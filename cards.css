@@ -1,0 +1,11 @@
+#cardContainer{
+	width: 500px;
+	height: 500px;
+}
+
+#textInputDiv {
+	width: 250px;
+	height: 250px;
+	border: 2px solid;
+	padding-top: 20px;
+}
