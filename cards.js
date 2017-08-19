@@ -17,7 +17,7 @@ function buildDomString (arr){
 		var domString = "";
 	domString+=`<div class="card" id="card">`;
 	domString+=`<p>${cards[i]}</p>`;
-    domString+=`<button id="deleteButton">Delete</button>`;
+    domString+=`<button id="deleteButton" class="delete-button">Delete</button>`;
     domString+=`</div>`;
     cardString += domString;
 	}
@@ -33,3 +33,10 @@ createButton.addEventListener('click',function(){
 
 // When the user clicks the Delete button, the containing card, and no other cards, should then be removed from the DOM. Not just made invisible, actually removed from the DOM.
 
+cardContainerDiv.addEventListener("click", function(e){
+    if(event.target.className === "delete-button"){
+        var parent = event.target.parentNode.parentNode;
+        var child = event.target.parentNode;
+        parent.removeChild(child);
+    }
+});
